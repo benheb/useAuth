@@ -107,8 +107,9 @@ export const AuthProvider: AuthProviderInterface = ({
         dispatch({
             type: "startAuthenticating"
         });
-
+        console.log('check session')
         auth0.checkSession({}, (err, authResult) => {
+            console.log('check session err', err)
             dispatch({
                 type: "stopAuthenticating"
             });
